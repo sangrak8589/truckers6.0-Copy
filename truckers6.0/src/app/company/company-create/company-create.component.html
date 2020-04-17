@@ -1,0 +1,22 @@
+<div class="main-div">
+    <mat-card>
+        <h2>Register Company</h2>
+        <form [formGroup]="form" (submit)="onSaveCompany()">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                formControlName="name"
+                placeholder="Company Name">
+                <mat-error *ngIf="form.get('name').invalid">Please enter a valid company name.</mat-error>
+            </mat-form-field>
+            <p></p>
+            <div>
+                <button
+                mat-raised-button
+                color="primary"
+                type="submit">Submit Company</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

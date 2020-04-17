@@ -1,0 +1,28 @@
+<div class="main-div">
+    <mat-card>
+        <h2>Join Company</h2>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <form [formGroup]="form" (submit)="onJoinCompany()" *ngIf="!isLoading">
+            <div>
+                <mat-form-field>
+                  <mat-label>Company</mat-label>
+                  <mat-select  
+                    formControlName="company"
+                    placeholder="Company">
+                    <mat-option *ngFor="let company of companies" [value]="company"> {{ company.name }}</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="form.get('company').invalid">Please select a role.</mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                    *ngIf="!isLoading">
+                    Join 
+                  </button>
+              </div>
+        </form>
+    </mat-card>
+</div>

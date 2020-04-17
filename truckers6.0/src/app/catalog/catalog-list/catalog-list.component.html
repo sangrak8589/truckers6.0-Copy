@@ -1,0 +1,60 @@
+<div>
+    <mat-card>
+        <h2>Amazon Catalog</h2>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <table mat-table matSort class="mat-elevation-z8">
+            <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.userName}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="item">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Item</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.companyName}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.points}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.points}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="purchaseItem" class="button">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <button mat-button color="primary">Purchase Item</button>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card>
+</div>
+<div>
+    <mat-card>
+        <h2>Microsoft Catalog</h2>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <table mat-table matSort class="mat-elevation-z8">
+            <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.userName}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="item">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Item</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.companyName}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.points}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+                <!--<td mat-cell *matCellDef="let relation"> {{relation.points}}</td>-->
+            </ng-container>
+            <ng-container matColumnDef="purchaseItem" class="button">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <button mat-button color="primary">Purchase Item</button>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card>
+</div>

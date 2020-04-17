@@ -1,0 +1,57 @@
+<div class="main-div">
+    <mat-card>
+        <h2>Forgot Password</h2>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        
+        <form #resetForm="ngForm" (submit)="onResetPassword(resetForm)" *ngIf="!isLoading">
+            <div>
+                <mat-form-field>
+                    <input
+                     matInput
+                     name="email"
+                     ngModel
+                     type="email"
+                     placeholder="E-Mail"
+                     #emailInput="ngModel"
+                     required
+                     email>
+                    <mat-error *ngIf="emailInput.invalid">Please enter a valid email</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input
+                     matInput
+                     type="text"
+                     name="username"
+                     ngModel
+                     placeholder="Username"
+                     #usernameInput="ngModel"
+                     required>
+                    <mat-error *ngIf="usernameInput.invalid">Please enter a valid username</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input
+                     matInput
+                     type="password"
+                     name="password"
+                     ngModel
+                     placeholder="New Password"
+                     #passwordInput="ngModel"
+                     required>
+                    <mat-error *ngIf="passwordInput.invalid">Please input a new valid password</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit">
+                Reset Password
+                </button>
+            </div>
+        </form>
+    </mat-card>
+</div>

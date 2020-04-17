@@ -1,0 +1,23 @@
+.mat-form-field {
+    background-color: primary;
+}
+
+.center {
+    width: 75%;
+    margin: 10px auto;
+}
+
+mat-card {
+    background-color: white;
+}
+
+.main-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-grid-tile:hover {
+    color: white;
+}

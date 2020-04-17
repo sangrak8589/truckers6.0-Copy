@@ -1,0 +1,97 @@
+<div class="main-div">
+  <mat-card>
+    <h2>{{ title }}</h2>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form [formGroup]="form" (submit)="onAddUser()" *ngIf="!isLoading">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="fname"
+          placeholder="First Name"
+        />
+        <mat-error *ngIf="form.get('fname').invalid"
+          >Please enter a valid first name.</mat-error
+        >
+      </mat-form-field>
+
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="lname"
+            placeholder="Last Name"
+          />
+          <mat-error *ngIf="form.get('lname').invalid"
+            >Please enter a last name.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="username"
+            placeholder="Username"
+          />
+          <mat-error *ngIf="form.get('username').invalid"
+            >Please enter a valid username.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="email"
+            type="email"
+            placeholder="E-Mail"
+            email
+          />
+          <mat-error *ngIf="form.get('email').invalid"
+            >Please enter a valid email.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <mat-error *ngIf="form.get('password').invalid"
+            >Please enter a valid password.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Position</mat-label>
+          <mat-select formControlName="role" placeholder="Position">
+            <mat-option *ngFor="let role of roles" [value]="role.role">
+              {{ role.role }}</mat-option
+            >
+          </mat-select>
+          <mat-error *ngIf="form.get('role').invalid"
+            >Please select a role.</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <p></p>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          *ngIf="!isLoading"
+        >
+          {{ title }}
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

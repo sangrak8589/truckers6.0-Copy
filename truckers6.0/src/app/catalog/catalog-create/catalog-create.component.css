@@ -1,0 +1,35 @@
+.mat-form-field {
+  background-color: accent;
+}
+
+.center {
+  width: 75%;
+  margin: 10px auto;
+}
+
+mat-card {
+  background-color: lightblue;
+}
+
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color:black;
+}
+
+div{
+  margin-bottom:10px;
+}

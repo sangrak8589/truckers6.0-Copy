@@ -1,0 +1,19 @@
+<div class="main-div" *ngIf="!userIsAuthenticated">
+  <mat-card>
+    Welcome to Truckers!
+  </mat-card>
+</div>
+<div class="jumbotron" *ngIf="userIsAuthenticated">
+  <div class="container">
+    <h1>Hi, {{ this.currentUser }}!</h1>
+    <h3>Welcome to your Truckers dashboard!</h3>
+    <h4>Use this portal to view and redeem your points from catalog!</h4>
+    <br />
+    <app-admin-dash *ngIf="isAdmin"></app-admin-dash>
+    <br />
+    <app-sponsor-dash *ngIf="isSponsor || isAdmin"></app-sponsor-dash>
+    <br />
+    <app-driver-dash></app-driver-dash>
+    <br />
+  </div>
+</div>
